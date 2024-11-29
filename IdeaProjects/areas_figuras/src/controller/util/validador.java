@@ -1,56 +1,40 @@
 package controller.util;
-import java.util.Random;
-
-public class validador {
-    public static boolean validarInt(String num) {
-        boolean band = true;
-        if(num.charAt(0) == '-') {
-            num = num.substring(1);
-        }
-        return band;
-    }
-    public static boolean validarDouble(String num) {
-        boolean band = true;
-        if(num.charAt(0) == '-') {
-            num = num.substring(1);
-        }
-        int cont_p = 0;
-        for(int i = 0; i < num.length(); i++) {
-            char c = num.charAt(i);
-            if(!Character.isDigit(c) && c != ',') {
-                band = false;
+public class validador{
+    public static boolean validarInt(String numero){
+        boolean intisValid;
+        int numeroLenght = numero.length();
+        int i = 0;
+        do{
+            char c = numero.charAt(i);
+            if(Character.isDigit(c)){
+                intisValid = true;
+            }else{
+                intisValid = false;
                 break;
             }
-            if(c == ',') {
-                cont_p++;
+            i++;
+        } while(i<numeroLenght);
+        return intisValid;
+    }
+    public static boolean validarDouble(String numero){
+        boolean doubleisValid;
+        int numeroLenght = numero.length();
+        int i = 0, dotCount = 0;
+        do{
+            char c = numero.charAt(i);
+            if(Character.isDigit(c) || numero.charAt(i) == '.' && dotCount <= 1){
+                doubleisValid = true;
+                dotCount++;
+            }else{
+                doubleisValid = false;
+                break;
             }
-        }
-        if(cont_p > 1) {
-            band = false;
-        }
-        return band;
+            i++;
+        } while(i<numeroLenght);
+        return doubleisValid;
     }
-
-    public static int transformStringInt(String num) {
-        int resp = 0;
-        if(validarInt(num)) {
-            resp = Integer.parseInt(num);
-        }
-        return resp;
-    }
-
-    public static float transformStringFloat(String num) {
-        float resp = 0.0f;
-        if(validarDouble(num)) {
-            resp = Float.parseFloat(num);
-        }
-        return resp;
-    }
-    public static double transformStringDouble(String num) {
-        double resp = 0.0d;
-        if(validarDouble(num)) {
-            resp = Double.parseDouble(num);
-        }
-        return resp;
-    }
+    //public static void ejecutar(){
+    //    String numero = "..3554";
+    //    System.out.println(validador.validarInt(numero));
+    //}
 }
