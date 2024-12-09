@@ -1,8 +1,8 @@
-package controller;
+package controller.bidimensionales.alex.bidimencionales;
 
 import java.util.Scanner;
 
-public class alexbidi {
+public class bidialex {
     //Alex Sigcho
     void arcocircular(){
         Scanner sc = new Scanner(System.in);
