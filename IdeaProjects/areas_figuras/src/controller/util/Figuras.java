@@ -172,8 +172,6 @@ public class Figuras {
                         break;
                     case 17:
                         break;
-                    default:
-                        System.out.println("Ingrese un numero entre el 0 y el 35");
                 }
             }else{
                 System.out.println("Ingrese un valor entero entre el 0 y el 35");
