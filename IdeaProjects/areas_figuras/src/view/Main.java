@@ -11,9 +11,10 @@ public class Main{
         Scanner sc = new Scanner(System.in);
         String firstMenutInput;
         do {
-            System.out.println("0. Salir");
             System.out.println("1. Calcular area de figuras");
+            System.out.println("0. Salir");
             firstMenutInput = sc.next();
+
             if(validador.validarInt(firstMenutInput)){
                 switch(casts.transformStringInt(firstMenutInput)){
                     case 0:
@@ -21,8 +22,9 @@ public class Main{
                     case 1:
                         System.out.println("Figuras bidimensionales");
                         Figuras.ejecutar();
-                    default:
-                        System.out.println("Ingrese un valor entre el 1 y el 2");
+                        //el default se ejecuta siempre no se porque 
+                    /*default:
+                        System.out.println("Ingrese un valor entre el 1 y el 2"); */
                 }
             }else{
                 System.out.println("Ingrese un valor entero entre 1 y 2");

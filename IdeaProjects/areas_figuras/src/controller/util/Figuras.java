@@ -1,12 +1,12 @@
 package controller.util;
 
-import view.Main;
-
 import java.util.Scanner;
+import controller.*;
 
 public class Figuras {
     static Scanner sc = new Scanner(System.in);
-    public Figuras(){
+
+    public static void Figuras_mostrar_menu() {
         String[][] matriz = new String[35][2];
 
         matriz[0][0] = "1";
@@ -58,10 +58,10 @@ public class Figuras {
         matriz[15][1] = ". Decágono";
 
         matriz[16][0] = "17";
-        matriz[16][1] = ". Dodecaedro";
+        matriz[16][1] = ". Dodecaedro (Area)";
 
         matriz[17][0] = "18";
-        matriz[17][1] = ". Dodecaedro";
+        matriz[17][1] = ". Dodecaedro (Volumen)";
 
         matriz[18][0] = "19";
         matriz[18][1] = ". Dodecágono";
@@ -115,23 +115,24 @@ public class Figuras {
         matriz[34][1] = ". Octágono";
 
         for (int i = 0, j = 0; i <= 34;) {
-            if(j==0){
+            if (j == 0) {
                 System.out.print(matriz[i][j]);
                 j++;
-            } else{
+            } else {
                 System.out.println(matriz[i][j]);
                 i++;
                 j--;
             }
         }
     }
-    public static void ejecutar(){
-        String secondtMenuInput;
-        do{
-            Figuras c = new Figuras();
-            secondtMenuInput = sc.next();
-            if(validador.validarInt(secondtMenuInput)){
-                switch(casts.transformStringInt(secondtMenuInput)){
+
+    public static void ejecutar() {
+        Figuras_mostrar_menu();
+        String secondtMenuInput = sc.nextLine();
+
+        if (validador.validarInt(secondtMenuInput)) {
+            do {
+                switch (casts.transformStringInt(secondtMenuInput)) {
                     case 0:
                         break;
                     case 1:
@@ -170,14 +171,18 @@ public class Figuras {
                         break;
                     case 16:
                         break;
+//-------------------------------------------------------------------------
                     case 17:
+                    F_bidimensionales.Ejecutar_dodecaedro();
                         break;
                     default:
                         System.out.println("Ingrese un numero entre el 0 y el 35");
                 }
-            }else{
-                System.out.println("Ingrese un valor entero entre el 0 y el 35");
-            }
-        } while(!validador.validarInt(secondtMenuInput) || casts.transformStringInt(secondtMenuInput) > 35);
+
+            } while (!validador.validarInt(secondtMenuInput) || casts.transformStringInt(secondtMenuInput) > 35);
+        } else {
+            System.out.println("Ingrese un valor entero entre el 0 y el 35");
+        }
     }
+
 }
