@@ -3,7 +3,7 @@ package controller.util;
 import java.util.Scanner;
 import controller.*;
 
-public class Figuras {
+public class Menu {
     static Scanner sc = new Scanner(System.in);
 
     public static void Figuras_mostrar_menu() {
