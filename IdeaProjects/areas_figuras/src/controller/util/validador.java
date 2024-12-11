@@ -1,4 +1,5 @@
 package controller.util;
+
 public class validador {
     public static boolean validarInt(String numero) {
         boolean intisValid;

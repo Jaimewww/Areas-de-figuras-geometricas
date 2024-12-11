@@ -1,9 +1,6 @@
-package view;
+package view; 
 
-import controller.util.Figuras;
-import controller.util.casts;
-import controller.util.validador;
-
+import controller.util.*;
 import java.util.Scanner;
 
 public class Main{
@@ -23,10 +20,10 @@ public class Main{
                         break;
                     case 1:
                         System.out.println("Figuras bidimensionales");
-                        Figuras.ejecutar();
-                        //el default se ejecuta siempre no se porque 
-                    /*default:
-                        System.out.println("Ingrese un valor entre el 1 y el 2"); */
+                        Menu.ejecutar();
+                        break; 
+                    default:
+                        System.out.println("Ingrese un valor entre el 1 y el 2"); 
                 }
             }else{
                 System.out.println("Ingrese un valor entero entre 1 y 2");

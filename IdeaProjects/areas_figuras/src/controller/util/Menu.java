@@ -70,7 +70,7 @@ public class Menu {
         matriz[19][1] = ". Elipse";
 
         matriz[20][0] = "21";
-        matriz[20][1] = ". Elipsoide";
+        matriz[20][1] = ". Elipsoide (Volumen)";
 
         matriz[21][0] = "22";
         matriz[21][1] = ". Eneágono";
@@ -179,16 +179,16 @@ public class Menu {
                         F_bidimensionales.Ejecutar_dodecaedro_volumen();
                         break;
                     case 19:
-                        F_bidimensionales.Ejecutar_dodecagono();// dodecagono
+                        F_bidimensionales.Ejecutar_dodecagono();
                         break;
                     case 20:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// elipse
+                        F_bidimensionales.Ejecutar_elipse();
                         break;
                     case 21:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// elipsoide
+                        F_bidimensionales.Ejecutar_elipsoide_volumen();
                         break;
                     case 22:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// eneagono
+                        F_bidimensionales.Ejecutar_eneagono();
                         break;
                     case 23:
                         F_bidimensionales.Ejecutar_dodecaedro_volumen();// esfera hueca

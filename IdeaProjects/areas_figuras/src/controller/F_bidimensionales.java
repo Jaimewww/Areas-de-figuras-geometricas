@@ -45,11 +45,24 @@ public class F_bidimensionales {
         double b = sc.nextDouble();
         double area = Math.PI * a * b;
 
-        System.out.println("El area de la elipse de eje superior " + a + " y de eje inferior " +b + " es: "+ area);
+        System.out.println("El area de la elipse de eje superior " + a + " y de eje inferior " +b + " es: "+ Utilidades.Redondear_double(area));
     }
 
     // elipsoide 21
-    public static void Ejecutar_elipsoide() {
+    public static void Ejecutar_elipsoide_volumen() {
+        System.out.println("Ingrese el largo");
+        double l = sc.nextDouble();
+        System.out.println("Ingrese la altura");
+        double h = sc.nextDouble();
+        System.out.println("Ingrese el ancho");
+        double a = sc.nextDouble(); 
+
+        double area = (4*Math.PI/3) *l*a*h; 
+        System.out.println("El area para el elipsoide de largo "+l+" ,de altura "+h+" y de ancho "+a+" es "+Utilidades.Redondear_double(area));
     }
 
+    // eneagono
+    public static void Ejecutar_eneagono() {
+        
+    }
 }
