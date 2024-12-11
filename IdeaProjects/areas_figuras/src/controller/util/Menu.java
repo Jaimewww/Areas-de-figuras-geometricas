@@ -1,14 +1,24 @@
 package controller.util;
 
-import view.Main;
-
 import java.util.Scanner;
 
-public class Figuras {
+public class Menu {
     static Scanner sc = new Scanner(System.in);
-    public Figuras(){
-        String[][] matriz = new String[35][2];
 
+    public void runMenu() {
+        int userInputfstc;
+        do {
+            showMenu();
+            userInputfstc = readInteger("Seleccione una opcion: ");
+            handleMenuOption(userInputfstc);
+            if (userInputfstc > 35 || userInputfstc < 0){
+                System.out.println("Error, entarada fuera de rango");
+            }
+        } while (userInputfstc != 0);
+    }
+
+    public void showMenu() {
+        String[][] matriz = new String[35][2];
         matriz[0][0] = "1";
         matriz[0][1] = ". Arco circular";
 
@@ -114,68 +124,87 @@ public class Figuras {
         matriz[34][0] = "35";
         matriz[34][1] = ". Octágono";
 
-        for (int i = 0, j = 0; i <= 34;) {
-            if(j==0){
+        for (int i = 0, j = 0; i <= 34; ) {
+            if (j == 0) {
                 System.out.print(matriz[i][j]);
                 j++;
-            } else{
+            } else {
                 System.out.println(matriz[i][j]);
                 i++;
                 j--;
             }
         }
     }
-    public static void ejecutar(){
-        String secondtMenuInput;
-        do{
-            Figuras c = new Figuras();
-            secondtMenuInput = sc.next();
-            if(validador.validarInt(secondtMenuInput)){
-                switch(casts.transformStringInt(secondtMenuInput)){
-                    case 0:
-                        break;
-                    case 1:
-                        System.out.println("Figura 1");
-                        break;
-                    case 2:
-                        System.out.println("Figura 2");
-                        break;
-                    case 3:
-                        System.out.println("Figura 3");
-                        break;
-                    case 4:
-                        System.out.println("Figura 4");
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        break;
-                    case 12:
-                        break;
-                    case 13:
-                        break;
-                    case 14:
-                        break;
-                    case 15:
-                        break;
-                    case 16:
-                        break;
-                    case 17:
-                        break;
-                }
-            }else{
-                System.out.println("Ingrese un valor entero entre el 0 y el 35");
+
+    public static void handleMenuOption(int secondMenuInput) {
+        switch (secondMenuInput) {
+            case 0:
+                break;
+            case 1:
+                System.out.println("Area de arco circular");
+                break;
+            case 2:
+                System.out.println("Area de cuadrado");
+                break;
+            case 3:
+                System.out.println("Figura 3");
+                break;
+            case 4:
+                System.out.println("Figura 4");
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16:
+                break;
+            case 17:
+                break;
+        }
+    }
+    public int readInteger (String message){
+        while (true) {
+            System.out.print(message);
+            String input = sc.next();
+            if (validador.validarInt(input)) {
+                return casts.transformStringInt(input);
+            } else {
+                System.out.println("Ingrese un numero entero valido");
             }
-        } while(!validador.validarInt(secondtMenuInput) || casts.transformStringInt(secondtMenuInput) > 35);
+        }
+    }
+    public float readFloat (String message){
+        while (true) {
+            System.out.print(message);
+            String input = sc.next();
+            if (validador.validarFloat(input)) {
+                return casts.transformStringFloat(input);
+            } else {
+                System.out.println("Ingrese un numero valido");
+            }
+        }
+    }
+    public String readString (String message){
+        System.out.print(message);
+        return sc.next();
     }
 }
+

@@ -9,10 +9,10 @@ public class casts {
         return resp;
     }
 
-    public static double transformStringDouble(String num) {
-        double resp = 0.0d;
-        if(validador.validarDouble(num)) {
-            resp = Double.parseDouble(num);
+    public static float transformStringFloat(String num) {
+        float resp = 0.0f;
+        if(validador.validarFloat(num)) {
+            resp = Float.parseFloat(num);
         }
         return resp;
     }
