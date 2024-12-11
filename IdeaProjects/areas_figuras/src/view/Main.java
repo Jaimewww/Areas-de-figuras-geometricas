@@ -1,6 +1,6 @@
 package view;
 
-import controller.util.Figuras;
+import controller.util.Menu;
 import controller.util.casts;
 import controller.util.validador;
 
@@ -10,6 +10,7 @@ public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String firstMenutInput;
+        Menu menu = new Menu();
         do {
             System.out.println("0. Salir");
             System.out.println("1. Calcular area de figuras");
@@ -20,7 +21,7 @@ public class Main{
                         break;
                     case 1:
                         System.out.println("Figuras bidimensionales");
-                        Figuras.ejecutar();
+                        menu.runMenu();
                     default:
                         System.out.println("Ingrese un valor entre el 1 y el 2");
                 }
