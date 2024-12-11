@@ -171,9 +171,63 @@ public class Figuras {
                         break;
                     case 16:
                         break;
-//-------------------------------------------------------------------------
+                    // -------------------------------------------------------------------------
                     case 17:
-                    F_bidimensionales.Ejecutar_dodecaedro();
+                        F_bidimensionales.Ejecutar_dodecaedro();
+                        break;
+                    case 18:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();
+                        break;
+                    case 19:
+                        F_bidimensionales.Ejecutar_dodecagono();// dodecagono
+                        break;
+                    case 20:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// elipse
+                        break;
+                    case 21:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// elipsoide
+                        break;
+                    case 22:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// eneagono
+                        break;
+                    case 23:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// esfera hueca
+                        break;
+                    case 24:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// esfera inclinada
+                        break;
+                    case 25:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Esferoide oblato
+                        break;
+                    case 26:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Estrella de 5 puntas
+                        break;
+                    case 27:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Estrella de 6 puntas
+                        break;
+                    case 28:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Hemisfera
+                        break;
+                    case 29:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Heptágono
+                        break;
+                    case 30:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Hexágono
+                        break;
+                    case 31:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Icosaedro (Area)
+                        break;
+                    case 32:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Icosaedro (Volumen)
+                        break;
+                    case 33:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Octaedro (Área)
+                        break;
+                    case 34:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Octaedro (Volumen)
+                        break;
+                    case 35:
+                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Octágono
                         break;
                     default:
                         System.out.println("Ingrese un numero entre el 0 y el 35");

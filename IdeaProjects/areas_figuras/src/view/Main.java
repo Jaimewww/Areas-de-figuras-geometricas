@@ -7,10 +7,12 @@ import controller.util.validador;
 import java.util.Scanner;
 
 public class Main{
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         String firstMenutInput;
         do {
+            System.out.println("--UNL Presenta--");
+            System.out.println("Calculadora de Area y volumenes de Figuras");
             System.out.println("1. Calcular area de figuras");
             System.out.println("0. Salir");
             firstMenutInput = sc.next();

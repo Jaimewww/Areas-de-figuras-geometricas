@@ -1,7 +1,5 @@
 package controller.util;
 
-import java.util.Random;
-
 public class Utilidades {
 
     public static boolean validate(String num) {
@@ -47,28 +45,10 @@ public class Utilidades {
         return resp;
     }
 
-    public static int generaNumeroRango(int minimo, int maximo) {
-        Random random = new Random();
-
-        return minimo + random.nextInt((maximo + 1) - minimo);
-    }
-
-    public static float generaNumeroRangoFloat(float minimo, float maximo) {
-        Random random = new Random();
-
-        return minimo + random.nextFloat((maximo + 1) - minimo);
-    }
-
-    public static float Redondear_float (float num) {
-       float aux = num*100.00f;
-       float aux1 = (float)((int)aux); 
-       return (aux1/100.00f);
-    }
-
     public static double Redondear_double (double n) {
-        double aux = n*100.00;
+        double aux = n*1000.000;
         double aux1 = (double)((int)aux); 
-        return (aux1/100.00); 
+        return (aux1/1000.000); 
     }
 
 }
