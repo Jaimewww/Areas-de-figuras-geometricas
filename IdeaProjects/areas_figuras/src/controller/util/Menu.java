@@ -191,16 +191,16 @@ public class Menu {
                         F_bidimensionales.Ejecutar_eneagono();
                         break;
                     case 23:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// esfera hueca
+                        F_bidimensionales.Ejecutar_esfera_hueca_volumen();
                         break;
                     case 24:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// esfera inclinada
+                        F_bidimensionales.Ejecutar_esfera_inclinada_volumen();
                         break;
                     case 25:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Esferoide oblato
+                        F_bidimensionales.Ejecutar_esferoide_oblato_volumen();
                         break;
                     case 26:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Estrella de 5 puntas
+                        F_bidimensionales.Ejecutar_estrella_5_puntas();
                         break;
                     case 27:
                         F_bidimensionales.Ejecutar_dodecaedro_volumen();// Estrella de 6 puntas
