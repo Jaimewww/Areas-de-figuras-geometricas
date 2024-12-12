@@ -1,5 +1,7 @@
 package controller.util;
 
+import controller.F_bidimensionales;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -141,7 +143,7 @@ public class Menu {
             case 0:
                 break;
             case 1:
-                System.out.println("Area de arco circular");
+                F_bidimensionales.Ejecutar_dodecaedro(); //EJEMPLO DE LLAMADAS A METODOS EN EL MENU
                 break;
             case 2:
                 System.out.println("Area de cuadrado");
