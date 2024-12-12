@@ -6,8 +6,172 @@ import controller.util.Utilidades;
 
 public class F_bidimensionales {
     static Scanner sc = new Scanner(System.in);
-    // 1 - 16 Sigcho
-    // aca deberia ir lo se sigcho
+    //Alex Sigcho-arcocircular-area-1
+    public static void arcocircular(){
+        System.out.println("Ingrese el valor del radio del circulo");
+        double radio=sc.nextDouble();
+        System.out.println("Ingrese el valor del angulo en grados");
+        double angulo=sc.nextDouble();
+        double angulorad = Math.toRadians(angulo);
+        double area =0.05*radio*radio*angulorad;
+        System.out.println("El area para el arco circular segun el radio del circulo "+radio+", angulo en grados "+angulo+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-bipiramidecuadrada-area-2
+    public static void bipiramidecuadrada(){
+        System.out.println("Ingrese el valor de un lado de la base cuadrada de la bipiramidecuadrada");
+        double lado=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura de la bipiramidecuadrada");
+        double altura=sc.nextDouble();
+        double base = lado*lado;
+        double lados = 2*lado*altura;
+        double area =2*base+4*lados;
+        System.out.println("El area para la bipiramidecuadrada segun lado de la base cuadrada "+lado+", altura "+altura+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-casqueteesferico-area-3
+    public static void casqueteesferico(){
+        double radio, altura,area;
+        System.out.println("Ingrese el radio ");
+        radio=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura del casquete");
+        altura=sc.nextDouble();
+        area =2* Math.PI *radio*altura;
+        System.out.println("El area para el casquete esferico segun su radio "+radio+", altura "+altura+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-circulo-area-4
+    public static void circulo(){
+        double radio,area;
+        System.out.println("Ingrese el valor del radio del circulo");
+        radio=sc.nextDouble();
+        area= Math.PI * radio*radio;
+        System.out.println("El area del circulo segun su "+radio+" es:"+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-circuloconcentrico-area-5
+    public static void circuloconcentrico(){
+        double radiomayor,radiomenor,area1,area2,area;
+        System.out.println("Ingrese el valor del radio mayor");
+        radiomayor=sc.nextDouble();
+        System.out.println("Ingres el valor del radio menor");
+        radiomenor=sc.nextDouble();
+        area1= Math.PI *radiomayor*radiomayor;
+        area2= Math.PI *radiomenor*radiomenor;
+        area=area1-area2;
+        System.out.println("El area del circulo concentrico segun su radio mayor "+radiomayor+", radio menor "+radiomenor+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-cilindro-area-6
+    public static void cilindro(){
+        double radio,altura,area;
+        System.out.println("Ingrese el valor del radio de la base del cilindro");
+        radio=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura del cilindro");
+        altura=sc.nextDouble();
+        area = 2 * Math.PI *radio*(radio+altura);
+        System.out.println("El area del cilindro segun la base "+radio+", altura "+altura+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-cilindroeliptico-area-7
+    public static void cilindroeliptico(){
+        double mayor,menor,altura,area;
+        System.out.println("Ingrese el valor del semieje mayor de la base eliptica");
+        mayor=sc.nextDouble();
+        System.out.println("Ingrese el valor del semieje menor de la base eliptica");
+        menor=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura del cilindro");
+        altura=sc.nextDouble();
+        area= 2 *  Math.PI *mayor*menor +2 * Math.PI*mayor*altura;
+        System.out.println("El area del cilindro eliptico segun su semieje mayor "+mayor+", semieje menor "+menor+", altura "+altura+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-cilindrohueco-area-8
+    public static void cilindrohueco(){
+        double externo,interno,altura,area;
+        System.out.println("Ingrese el valor del radio externo de la base del cilindro");
+        externo=sc.nextDouble();
+        System.out.println("Ingrese el valor del radio interno de la base del cilindro");
+        interno=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura del cilindro");
+        altura=sc.nextDouble();
+        area=2* Math.PI*altura*(externo+interno)+ 2 +Math.PI *(externo*externo - interno*interno);
+        System.out.println("El area del cilindro hueco segun su radio externo "+externo+", radio interno "+interno+", altura "+altura+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-cilindroinclinado-area-9
+    public static void cilindroinclinado(){
+        double radio,altura,area;
+        System.out.println("Ingrese el valor del radio de la base del cilindro");
+        radio=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura del cilindro");
+        altura=sc.nextDouble();
+        area=2* Math.PI *radio*(radio*altura);
+        System.out.println("El area del cilindro inclinado segun su el radio de la base "+radio+", altura "+altura+" es: "+Utilidades.Redondear_double(area) );
+    }
+    //Alex Sigcho-cono-area-10
+    public static void cono(){
+        double radio,altura,generatriz,area;
+        System.out.println("Ingres el valor del radio de la base del cono");
+        radio=sc.nextDouble();
+        System.out.println("Ingrese el valor de la altura del cono");
+        altura=sc.nextDouble();
+        generatriz= Math.sqrt(radio*radio + altura*altura);
+        area = Math.PI *radio*(radio+generatriz);
+        System.out.println("El area del cono segun el radio de la base "+radio+", altura"+altura+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-conooblicuo-area-11
+    public static void conooblicuo(){
+        double radio,generatriz,area;
+        System.out.println("Ingrese el valor del radio de la base del cono");
+        radio=sc.nextDouble();
+        System.out.println("Ingrese el valor de la longitud de la generatriz");
+        generatriz=sc.nextDouble();
+        area= Math.PI * radio * (radio + generatriz);
+        System.out.println("El area del cono oblicuo segun el radio de la base  "+radio+", generatriz "+generatriz+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-coronacircular-area-12
+    public static void coronacircular(){
+        double exterior, interior, area;
+        System.out.println("Ingrese el valor del radio del circulo exterior");
+        exterior=sc.nextDouble();
+        System.out.println("Ingrese el valor del radio del circulo interior");
+        interior=sc.nextDouble();
+        area= Math.PI *(exterior*exterior-interior*interior);
+        System.out.println("El area de la corona circular segun su radio exterior "+exterior+", radio interior "+interior+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-cubo-area-13
+    public static void cubo(){
+        double lado,area;
+        System.out.println("Ingrese el valor de un lado del cubo");
+        lado=sc.nextDouble();
+        area=6* Math.pow(lado, 2);
+        System.out.println("El area del cubo segun su lado "+lado+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-cuboctaedro-area-14
+    public static void cuboctaedro(){
+        double lado,area;
+        System.out.println("Ingrese el valor de un lado del cuboctaedro");
+        lado=sc.nextDouble();
+        area=2*(5+Math.sqrt(3))*lado*lado;
+        System.out.println("El area del cuboctaedro segun uno de sus lados "+lado+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho-decagono-area-15
+    public static void decagono(){
+        double lado,area;
+        System.out.println("Ingrese el valor de un lado del dacagono");
+        lado=sc.nextDouble();
+        area=(5.0/2.0)*lado*lado*(1.0/ Math.tan(Math.PI/10));
+        System.out.println("El area del decagono segun uno de sus lados "+lado+" es: "+Utilidades.Redondear_double(area));
+    }
+    //Alex Sigcho revisar si poner o no corazon-16
+    public static void corazon(){
+        int n = 10000;
+        double area = 0.0;
+        double t;
+        double deltaT = 2 * Math.PI / n;
+
+        for (int i = 0; i < n; i++) {
+            t = i * deltaT;
+            double x = 16 * Math.pow(Math.sin(t), 3);
+            double y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+            area += x * y * deltaT;
+        }
+        area = Math.abs(area);
+        System.out.println("El area aproximada de la figura corazon es: " + area);
+    }
 
     // dodecaedro area 17
     public static void Ejecutar_dodecaedro() {

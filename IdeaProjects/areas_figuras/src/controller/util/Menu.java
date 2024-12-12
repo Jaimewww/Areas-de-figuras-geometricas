@@ -143,40 +143,52 @@ public class Menu {
             case 0:
                 break;
             case 1:
-                F_bidimensionales.Ejecutar_dodecaedro(); //EJEMPLO DE LLAMADAS A METODOS EN EL MENU
+                F_bidimensionales.arcocircular(); //EJEMPLO DE LLAMADAS A METODOS EN EL MENU
                 break;
             case 2:
-                System.out.println("Area de cuadrado");
+                F_bidimensionales.bipiramidecuadrada();
                 break;
             case 3:
-                System.out.println("Figura 3");
+            F_bidimensionales.casqueteesferico();
                 break;
             case 4:
-                System.out.println("Figura 4");
+            F_bidimensionales.circulo();
                 break;
             case 5:
+            F_bidimensionales.circuloconcentrico();
                 break;
             case 6:
+            F_bidimensionales.cilindro();
                 break;
             case 7:
+            F_bidimensionales.cilindroeliptico();
                 break;
             case 8:
+            F_bidimensionales.cilindrohueco();
                 break;
             case 9:
+            F_bidimensionales.cilindroinclinado();
                 break;
             case 10:
+            F_bidimensionales.cono();
                 break;
             case 11:
+            F_bidimensionales.conooblicuo();
                 break;
             case 12:
+            F_bidimensionales.coronacircular();
                 break;
             case 13:
+            F_bidimensionales.corazon();
                 break;
             case 14:
+            F_bidimensionales.cubo();
                 break;
             case 15:
+            F_bidimensionales.cuboctaedro();
                 break;
             case 16:
+            F_bidimensionales.decagono();
                 break;
             case 17:
                 break;
