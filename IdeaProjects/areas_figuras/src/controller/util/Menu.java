@@ -1,7 +1,5 @@
 package controller.util;
 
-import controller.F_bidimensionales;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -138,57 +136,45 @@ public class Menu {
         }
     }
 
-    public static void handleMenuOption(int secondMenuInput) {
+    public  void handleMenuOption(int secondMenuInput) {
         switch (secondMenuInput) {
             case 0:
                 break;
             case 1:
-                F_bidimensionales.arcocircular(); //EJEMPLO DE LLAMADAS A METODOS EN EL MENU
+                System.out.println("Area de arco circular");
                 break;
             case 2:
-                F_bidimensionales.bipiramidecuadrada();
+                System.out.println("Area de cuadrado");
                 break;
             case 3:
-            F_bidimensionales.casqueteesferico();
+                System.out.println("Figura 3");
                 break;
             case 4:
-            F_bidimensionales.circulo();
+                System.out.println("Figura 4");
                 break;
             case 5:
-            F_bidimensionales.circuloconcentrico();
                 break;
             case 6:
-            F_bidimensionales.cilindro();
                 break;
             case 7:
-            F_bidimensionales.cilindroeliptico();
                 break;
             case 8:
-            F_bidimensionales.cilindrohueco();
                 break;
             case 9:
-            F_bidimensionales.cilindroinclinado();
                 break;
             case 10:
-            F_bidimensionales.cono();
                 break;
             case 11:
-            F_bidimensionales.conooblicuo();
                 break;
             case 12:
-            F_bidimensionales.coronacircular();
                 break;
             case 13:
-            F_bidimensionales.corazon();
                 break;
             case 14:
-            F_bidimensionales.cubo();
                 break;
             case 15:
-            F_bidimensionales.cuboctaedro();
                 break;
             case 16:
-            F_bidimensionales.decagono();
                 break;
             case 17:
                 break;
@@ -205,10 +191,16 @@ public class Menu {
             }
         }
     }
+    public float convertirAnguloAradianes (float angulo){
+        float radianes = (float)Math.toRadians(angulo);
+        return radianes; 
+    }
+    
     public float readFloat (String message){
         while (true) {
-            System.out.print(message);
-            String input = sc.next();
+            System.out.print(message); // presenta el mensaje que recibe 
+            String input = sc.next(); //lee y la respuesta
+             
             if (validador.validarFloat(input)) {
                 return casts.transformStringFloat(input);
             } else {
@@ -221,3 +213,4 @@ public class Menu {
         return sc.next();
     }
 }
+
