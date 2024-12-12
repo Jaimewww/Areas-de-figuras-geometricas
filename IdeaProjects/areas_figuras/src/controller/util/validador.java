@@ -1,4 +1,5 @@
 package controller.util;
+
 public class validador {
     public static boolean validarInt(String numero) {
         boolean intisValid;
@@ -17,7 +18,7 @@ public class validador {
         return intisValid;
     }
 
-    public static boolean validarDouble(String numero) {
+    public static boolean validarFloat(String numero) {
         boolean doubleisValid = false;
         int numeroLenght = numero.length();
         int i = 0, dotCount = 0;
