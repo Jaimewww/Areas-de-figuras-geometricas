@@ -1,14 +1,24 @@
 package controller.util;
 
 import java.util.Scanner;
-import controller.*;
 
 public class Menu {
     static Scanner sc = new Scanner(System.in);
 
-    public static void Figuras_mostrar_menu() {
-        String[][] matriz = new String[35][2];
+    public void runMenu() {
+        int userInputfstc;
+        do {
+            showMenu();
+            userInputfstc = readInteger("Seleccione una opcion: ");
+            handleMenuOption(userInputfstc);
+            if (userInputfstc > 35 || userInputfstc < 0){
+                System.out.println("Error, entarada fuera de rango");
+            }
+        } while (userInputfstc != 0);
+    }
 
+    public void showMenu() {
+        String[][] matriz = new String[35][2];
         matriz[0][0] = "1";
         matriz[0][1] = ". Arco circular";
 
@@ -58,10 +68,10 @@ public class Menu {
         matriz[15][1] = ". Decágono";
 
         matriz[16][0] = "17";
-        matriz[16][1] = ". Dodecaedro (Area)";
+        matriz[16][1] = ". Dodecaedro";
 
         matriz[17][0] = "18";
-        matriz[17][1] = ". Dodecaedro (Volumen)";
+        matriz[17][1] = ". Dodecaedro";
 
         matriz[18][0] = "19";
         matriz[18][1] = ". Dodecágono";
@@ -70,7 +80,7 @@ public class Menu {
         matriz[19][1] = ". Elipse";
 
         matriz[20][0] = "21";
-        matriz[20][1] = ". Elipsoide (Volumen)";
+        matriz[20][1] = ". Elipsoide";
 
         matriz[21][0] = "22";
         matriz[21][1] = ". Eneágono";
@@ -114,7 +124,7 @@ public class Menu {
         matriz[34][0] = "35";
         matriz[34][1] = ". Octágono";
 
-        for (int i = 0, j = 0; i <= 34;) {
+        for (int i = 0, j = 0; i <= 34; ) {
             if (j == 0) {
                 System.out.print(matriz[i][j]);
                 j++;
@@ -126,117 +136,74 @@ public class Menu {
         }
     }
 
-    public static void ejecutar() {
-        Figuras_mostrar_menu();
-        String secondtMenuInput = sc.nextLine();
-
-        if (validador.validarInt(secondtMenuInput)) {
-            do {
-                switch (casts.transformStringInt(secondtMenuInput)) {
-                    case 0:
-                        break;
-                    case 1:
-                        System.out.println("Figura 1");
-                        break;
-                    case 2:
-                        System.out.println("Figura 2");
-                        break;
-                    case 3:
-                        System.out.println("Figura 3");
-                        break;
-                    case 4:
-                        System.out.println("Figura 4");
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        break;
-                    case 12:
-                        break;
-                    case 13:
-                        break;
-                    case 14:
-                        break;
-                    case 15:
-                        break;
-                    case 16:
-                        break;
-                    // -------------------------------------------------------------------------
-                    case 17:
-                        F_bidimensionales.Ejecutar_dodecaedro();
-                        break;
-                    case 18:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();
-                        break;
-                    case 19:
-                        F_bidimensionales.Ejecutar_dodecagono();
-                        break;
-                    case 20:
-                        F_bidimensionales.Ejecutar_elipse();
-                        break;
-                    case 21:
-                        F_bidimensionales.Ejecutar_elipsoide_volumen();
-                        break;
-                    case 22:
-                        F_bidimensionales.Ejecutar_eneagono();
-                        break;
-                    case 23:
-                        F_bidimensionales.Ejecutar_esfera_hueca_volumen();
-                        break;
-                    case 24:
-                        F_bidimensionales.Ejecutar_esfera_inclinada_volumen();
-                        break;
-                    case 25:
-                        F_bidimensionales.Ejecutar_esferoide_oblato_volumen();
-                        break;
-                    case 26:
-                        F_bidimensionales.Ejecutar_estrella_5_puntas();
-                        break;
-                    case 27:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Estrella de 6 puntas
-                        break;
-                    case 28:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Hemisfera
-                        break;
-                    case 29:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Heptágono
-                        break;
-                    case 30:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Hexágono
-                        break;
-                    case 31:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Icosaedro (Area)
-                        break;
-                    case 32:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Icosaedro (Volumen)
-                        break;
-                    case 33:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Octaedro (Área)
-                        break;
-                    case 34:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Octaedro (Volumen)
-                        break;
-                    case 35:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Octágono
-                        break;
-                    default:
-                        System.out.println("Ingrese un numero entre el 0 y el 35");
-                }
-
-            } while (!validador.validarInt(secondtMenuInput) || casts.transformStringInt(secondtMenuInput) > 35);
-        } else {
-            System.out.println("Ingrese un valor entero entre el 0 y el 35");
+    public static void handleMenuOption(int secondMenuInput) {
+        switch (secondMenuInput) {
+            case 0:
+                break;
+            case 1:
+                System.out.println("Area de arco circular");
+                break;
+            case 2:
+                System.out.println("Area de cuadrado");
+                break;
+            case 3:
+                System.out.println("Figura 3");
+                break;
+            case 4:
+                System.out.println("Figura 4");
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16:
+                break;
+            case 17:
+                break;
         }
     }
-
+    public int readInteger (String message){
+        while (true) {
+            System.out.print(message);
+            String input = sc.next();
+            if (validador.validarInt(input)) {
+                return casts.transformStringInt(input);
+            } else {
+                System.out.println("Ingrese un numero entero valido");
+            }
+        }
+    }
+    public float readFloat (String message){
+        while (true) {
+            System.out.print(message);
+            String input = sc.next();
+            if (validador.validarFloat(input)) {
+                return casts.transformStringFloat(input);
+            } else {
+                System.out.println("Ingrese un numero valido");
+            }
+        }
+    }
+    public String readString (String message){
+        System.out.print(message);
+        return sc.next();
+    }
 }
