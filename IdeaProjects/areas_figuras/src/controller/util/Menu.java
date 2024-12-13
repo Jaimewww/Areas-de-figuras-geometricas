@@ -458,4 +458,3 @@ public class Menu {
         return sc.next();
     }
 }
-
