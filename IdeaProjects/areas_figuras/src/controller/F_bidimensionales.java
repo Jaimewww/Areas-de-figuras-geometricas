@@ -187,7 +187,8 @@ public class F_bidimensionales {
         float b = menu.readFloat("Ingrese el eje inferior: ");
         float area = (float) (Math.PI * a * b);
 
-        System.out.println("El area de la elipse de eje superior " + a + " y de eje inferior " +b + " es: "+ Utilidades.Redondear_double(area));
+        System.out.println("El area de la elipse de eje superior " + a + " y de eje inferior " + b + " es: "
+                + Utilidades.Redondear_double(area));
     }
 
     // elipsoide 21
@@ -223,11 +224,30 @@ public class F_bidimensionales {
         System.out.println("El volumen de la esfera inclinada de radio "+r+" y de altura "+h+" es: "+Utilidades.Redondear_double(volumen));
     }
 
-    //esferoide oblato 25 
+    // esferoide oblato 25
     public static void Ejecutar_esferoide_oblato_volumen() {
-        float e = menu.readFloat("Ingrese el radio ecuatorial del esferoide oblato: ");
+      float e = menu.readFloat("Ingrese el radio ecuatorial del esferoide oblato: ");
         float p = menu.readFloat("Ingrese el radio polar del esferoide oblato: ");
         double volumen = ((double) 4 /3) * Math.PI*Math.pow(e, 2) * p ;
         System.out.println("El volumen del esferoide oblato de eje ecuatorial"+e+" y eje polar "+p+" es: "+Utilidades.Redondear_double(volumen));
     }
+
+    // estrella 5 puntas 26
+    public static void Ejecutar_estrella_5_puntas() {
+        float l = menu.readFloat("Ingrese cuanto mide un lado del hexagono interno: ");
+        float h = menu.readFloat("Ingrese la altura de uno de los triangulo exteriores: ");
+        double area_pen = (5.0 / 4.0) * Math.pow(l, 2) * (1.0 / Math.tan(Math.toDegrees(Math.PI / 5.0)));
+        double area_tri =  (5*(l * h))/2.0;
+        System.out.println("El area de la estrella de lado penagonal: "+l+" y altura triangular: "+h+" es: "+Utilidades.Redondear_double(area_tri+area_pen));
+    }
+
+    // estrella de 6 puntos 
+    public static void Ejecutar_estrella_6_puntas() {
+        float l = menu.readFloat("Ingrese cuanto mide un lado del hexagono interno: ");
+        float h  = menu.readFloat("Ingrese la altura de uno de los triangulo exteriores: ");
+        double area_hex = Math.pow(l, 2) * (3*(Math.sqrt(3))/2.0);
+        double area_tri =  (6*(l * h))/2.0;
+        System.out.println("El area de la estrella de lado hexagonal: "+l+" y altura triangular: "+h+" es: "+Utilidades.Redondear_double(area_tri+area_hex));
+    }
+
 }
