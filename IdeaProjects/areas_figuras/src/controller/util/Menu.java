@@ -134,6 +134,7 @@ public class Menu {
             do {
                 switch (casts.transformStringInt(secondtMenuInput)) {
                     case 0:
+                    //salir
                         break;
                     case 1:
                         System.out.println("Figura 1");
@@ -203,7 +204,7 @@ public class Menu {
                         F_bidimensionales.Ejecutar_estrella_5_puntas();
                         break;
                     case 27:
-                        F_bidimensionales.Ejecutar_dodecaedro_volumen();// Estrella de 6 puntas
+                        F_bidimensionales.Ejecutar_estrella_6_puntas();
                         break;
                     case 28:
                         F_bidimensionales.Ejecutar_dodecaedro_volumen();// Hemisfera
