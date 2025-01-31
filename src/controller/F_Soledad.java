@@ -9,11 +9,8 @@ package controller;
  * @author JAIMEUNL
  */
 public class F_Soledad {
-    public void ejecutarRombo() { // 55
-        float a = Math.abs(menu.readFloat("Ingrese el valor de la diagonal mayor (D): "));
-        float b = Math.abs(menu.readFloat("Ingrese el valor de la diagonal mmenor (d): "));
-        float area = (a * b) / 2;
-        System.out.println("Su area es: " + area);
+    public static float ejecutarRombo(float a,float b)  { // 55
+        return (a * b) / 2;
     }
 
     public void ejecutarRomboide() { // 56
