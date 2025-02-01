@@ -9,114 +9,122 @@ package controller;
  * @author JAIMEUNL
  */
 public class F_Soledad {
-    public static float ejecutarRombo(float a,float b)  { // 55
-        return (a * b) / 2;
+    
+    public static float ejecutarOctaedroArea(float a)  { // a = arista 
+        return (float)(2 * Math.sqrt(3) * Math.pow(a, 2));
     }
-
-    public void ejecutarRomboide() { // 56
-        float a = Math.abs(menu.readFloat("Ingrese el valor de base de la figura (B): "));
-        float b = Math.abs(menu.readFloat("Ingrese el valor de la altura de la figura (h): "));
-        float area = a * b;
-        System.out.println("Su area es: " + area);
+    public static float ejecutarOctaedroVolumen(float a)  { // a = longitud
+        return (float)((Math.sqrt(2) / 3) * Math.pow(a, 3));
     }
-
-    public void ejecutarSectorCircular() { // 57
-        float a = Math.abs(menu.readFloat("Ingrese el ángulo en radianes (θ): "));
-        float b = Math.abs(menu.readFloat("Ingrese el radio de la figura (r): "));
-        float areaGrados = (float) ((a / 360) * (Math.PI * (b * b)));
-        System.out.println("Su area en grados es : " + areaGrados);
-        System.out.println("Su area es: " + areaGrados);
+    public static float ejecutarOrtoedro(float l, float w, float h) { // 3
+        return (2 * l * w) + (2 * l * h) + (2 * w * h); // l = longitud  - w = ancho- h = altua
     }
-
-    public void ejecutarSegmentocircular() { // 58
-        float a = Math.abs(menu.readFloat("Ingrese el ángulo en grados (θ): "));
-        float b = Math.abs(menu.readFloat("Ingrese el radio de la figura (r): "));
-        float c = menu.convertirAnguloAradianes(a);
-        float areaGrados = (float) (Math.pow(0.5, b) * (c - Math.sin(c)));
-        System.out.println("Su area en grados es : " + areaGrados);
+    public static float ejecutarParalelepipedo(float a, float b, float c) { // a = lado - b = lado - c = lado
+        return 2 * ((a * b) + (a * c) + (b * c));  
+    }
+    public static float ejecutarPiramideCuadrada(float a, float h) { // a = base - h = altura
+        return (float) (Math.pow(a, 2) + (2 * a) * Math.sqrt((Math.pow(a, 2) / 4) + Math.pow(h, 2)));
+    }
+    public static float areaBaseDodecagonal(float a) { // a longitud de un lado
+        return (float) (3 * (2 + Math.sqrt(3)) * Math.pow(a, 2));
+    }
+    // calcular el volumen de la pirámide dodecagonal
+    public static float ejecutarVolumenDodecagonal(float l, float a) {// l = area base , a = atura 
+        float b = areaBaseDodecagonal(l);
+        return (float) ((1.0 / 3.0) * b * a);
+    }
+    public static float ejecutarPiramideHexagonal(float l, float a_base, float a_lateral) { // l = lado de la base - a_base = area base - a_lateral
+        return (3 * l) * (a_base + a_lateral);
+    }
+    public static float ejecutarPiramideOblicua(float l, float a) { // l = lado base - a = altura
+        // Área de la base (cuadrada)
+        float areaBase = l * l;
+        // Área lateral 
+        float apotema = (float) Math.sqrt((l / 2) * (l / 2) + a* a); 
+        float areaLateral = 4 * (0.5f * l * apotema); 
+        // Área total
+        return areaBase + areaLateral;
+    }
+    public static float ejecutarPiramidePentagonal(float l, float al) { // l = lado base - al = altura lateral 
+        // perímetro de la base
+        float perimetroBase = 5 * l;
+        // apotema 
+        float apotemaBase = 0.5f * (float) Math.sqrt(5 * (5 + 2 * Math.sqrt(5))) * l; // Apotema
+        // Área de la base
+        float areaBase = (perimetroBase * apotemaBase) / 2;
+        // Área lateral
+        float areaLateral = (5 * l * al) / 2;
+        // Área total
+        return areaBase + areaLateral;
+    }
+    public static float ejecutarPiramideTriangular(float b, float a, float al) { // b = baseTriangulo a = alturaTriangulo al = altura lateral 
+        // área de la base 
+        float areaBase = (b * a) / 2;
+        //  área lateral
+        float areaLateral = 3 * (0.5f * b * al);
+        // Área total
+        return areaBase + areaLateral;
+    }
+    public static float ejecutarPiramideTruncada(float lm, float ln, float al) { // lm = ladoBaseMayor ln = ladoBaseMenor al = alturaLateral
+        float perimetroBaseMayor = 4 * lm;
+        float perimetroBaseMenor = 4 * ln;
+        // Área lateral 
+        float areaLateral = ((perimetroBaseMayor + perimetroBaseMenor) / 2) * al;
+        return (lm * lm ) + (ln * ln) + areaLateral;
+    }
+    // area de la base 
+    public static float ejecutarBaseDodecagonal(float l) { // l = lado
+        return (float) (3 * (2 + Math.sqrt(3)) * Math.pow(l, 2));
+    }
+    public static float ejecutarPrismaDodecagonal(float l, float a) { // l = lado , a = altura
+        float areaBase = ejecutarBaseDodecagonal(l);
+        return areaBase + ((12 * l) * a); 
+    }
+    // area de la base
+    public static float ejecutarBaseHexagonal(float l) { // l = lado
+        return (float) ((3 * Math.sqrt(3) / 2) * Math.pow(l, 2));
+    }
+    public static float ejecutarPrismaHexagonal(float l, float a) { // l = lado a = altura
+        float areaBase = ejecutarBaseHexagonal(l);
+        return 2 * areaBase + ((6 * l) * a);
+    }
+    public static float ejecutarBasePentagonal(float l, float a) {// l = lado a = apotema
+        return (5 / 2.0f) * a * l;
+    }
+    public static float ejecutarPrismaPentagonal(float l ,float a, float al) { // l = lado a = apotema al = altura
+        float areaBase = ejecutarBasePentagonal(l, a);
+        return 2 * areaBase + ((5 * l) * al); 
+    }
+    public static float ejecutarPrismaRectangular(float l, float a, float h) { // l = longitud- a = ancho h =altura
+        return 2 * (l* a + l * h + a * h);
+    }
+    // área de la base 
+    public static float ejecutarBaseTriangular(float b, float a) { // b = base a = altura
+        return 0.5f * b * a;
+    }
+    public static float areaSuperficialPrismaTriangular(float a, float b, float c, float at, float ag) {
+        // a = ladoA, b = ladoB, c = ladoC ; at = altura prisma  ag = altura triangulo
+        float areaBase = ejecutarBaseTriangular(b, ag); 
+        return 2 * areaBase + ((a + b + c) * at); // Área total
+    }
+    public static float ejecutarSemiEsfera(float a) { // a = radio
+        return (float) ((2) * (Math.PI) * (Math.pow(a, 2)));
 
     }
-
-    public void ejecutarSegmentoEliptico() { // 59
-        float a = Math.abs(menu.readFloat("Ingrese el semieje mayor de la figura: "));
-        float b = Math.abs(menu.readFloat("Ingrese el ángulo del sector en radianes (θ): "));
-        float c = menu.convertirAnguloAradianes(b);
-        float d = Math.abs(menu.readFloat("Ingrese el semieje menor de la figura : "));
-        float area = (float) ((0.5 * (a * d)) * (c - Math.sin(c)));
-        System.out.println("Su area es: " + area);
+    public static float ejecutarTetraedroArea(float a) { // a = arista 
+        return (float) (Math.sqrt(3) * (Math.pow(a, 2)));
     }
-
-    public void ejecutarSemiCirculo() { // 60
-        float a = Math.abs(menu.readFloat("Ingrese el radio de la figura (r): "));
-        float area = (float) (((Math.PI) * (Math.pow(a, 2))) / 2);
-        System.out.println("Su area es: " + area);
+    public static float ejecutarTetraedroVolumen(float a) { // a = arista 
+        return (float) ((Math.pow(a, 3) * (Math.sqrt(2))) / 12);
     }
-
-    public void ejecutarSemiEsfera() { // 61
-        float a = Math.abs(menu.readFloat("Ingrese el radio de la figura (r): "));
-        float area = (float) ((2) * (Math.PI) * (Math.pow(a, 2)));
-        System.out.println("Su area es: " + area);
-    }
-
-    public void ejecutarTetraedroArea() { // 62
-        float a = Math.abs(menu.readFloat("Ingrese la longitud de una arista la figura (a): "));
-        float area = (float) (Math.sqrt(3) * (Math.pow(a, 2)));
-        System.out.println("Su area es: " + area);
-    }
-
-    public void ejecutarTetraedroVolumen() { // 63
-        float a = Math.abs(menu.readFloat("Ingrese la longitud de una arista la figura (a): "));
-        float volumen = (float) ((Math.pow(a, 3) * (Math.sqrt(2))) / 12);
-        System.out.println("El volumen es: " + volumen);
-    }
-
-    public void ejecutarToroide() { // 64
-        float a = Math.abs(menu.readFloat("Ingrese el radio de la circunferencia central (R): "));
-        float b = Math.abs(menu.readFloat("Ingrese el radio del circulo geneador (r): "));
-        float area = (float) ((4) * (Math.pow(Math.PI, 2)) * (a) * (b));
-        System.out.println("El volumen es: " + area);
-    }
-
-    public void ejecutarTrapecioCircular() { // 65
-        float a = Math.abs(menu.readFloat("Ingrese el radio de la circunferencia exterior (R): "));
-        float b = Math.abs(menu.readFloat("Ingrese el radio de la circunferencia interior (r): "));
-        float c = Math.abs(menu.readFloat("Ingrese el radio de la figura (r): "));
-        float area = (float) ((0.5) * (c) * ((Math.pow(a, 2)) - (Math.pow(b, 2))));
-        System.out.println("El volumen es: " + area);
-    }
-
-    public void ejecutarTrapecioIsoceles() { // 66
-        float a = Math.abs(menu.readFloat("Ingrese el valor de la base mayor (a): "));
-        float b = Math.abs(menu.readFloat("Ingrese el valor de la base mmenor (b): "));
-        float c = Math.abs(menu.readFloat("Ingrese el valor de la altura (h): "));
-        float area = ((a * b) / 2) * (c);
-        System.out.println("Su area es: " + area);
-    }
-
-    public void ejecutarTriangulo() { // 67
-        float a = Math.abs(menu.readFloat("Ingrese el valor de la base (b): "));
-        float b = Math.abs(menu.readFloat("Ingrese el valor de la altura (h): "));
-        float area = ((a * b) / 2);
-        System.out.println("Su area es: " + area);
-    }
-
-    public void ejecutarTrianaguloEquilatero() { // 68
-        float a = Math.abs(menu.readFloat("Ingrese la longitud de uno de la figura (a): "));
-        float area = (float) ((Math.pow(a, 2)) / 4);
-        System.out.println("Su area es: " + area);
-    }
-
-    public void ejecutarTrianguloEscaleno() { // 69
-        float a = Math.abs(menu.readFloat("Ingrese el valor de la base de la figura  (a): "));
-        float b = Math.abs(menu.readFloat("Ingrese el valor de la altura (h): "));
-        float area = (a * b) / 2;
-        System.out.println("Su area es: " + area);
-    }
-
-    public void ejecutarTrinquete() { // 69
-        float a = Math.abs(menu.readFloat("Ingrese el largo de la figura (L): "));
-        float b = Math.abs(menu.readFloat("Ingrese el largo de la figura (a): "));
-        float area = (a * b);
-        System.out.println("Su area es: " + area);
-    }
+    public static float ejecutarToroide( float a, float b) { //a = radio de la circunferencia central - b = radio circulo geneador
+        return (float) ((4) * (Math.pow(Math.PI, 2)) * (a) * (b));
+        
+    }   
 }
+
+   
+
+    
+
+    

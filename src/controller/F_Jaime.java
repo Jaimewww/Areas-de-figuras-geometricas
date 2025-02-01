@@ -57,14 +57,7 @@ public class F_Jaime {
         System.out.println("El area de la piramide cuadrada es de " + area);
     }
 
-    //Piramide dodecagonal - Jaime
-    public static void ejecutarPiramideDodecagonal() {
-        float l = menu.readFloat("Ingrese el valor de un lado de la base: ");
-        float p = l * 12;
-        float apotema = menu.readFloat("Ingrese el valor del apotema: ");
-        float area = 2 * ((p * apotema) / 2);
-        System.out.println("El area de la piramide dodecagonal es de: " + area);
-    }
+   
 
     //Piramide hexagonal
     public static void ejecutarPiramideHexagonal() {
@@ -75,3 +68,15 @@ public class F_Jaime {
         System.out.println("El area de la piramide hexagonal es de: " + area);
     }
 }
+
+    
+    
+    //  calcular el área de la base dodecagonal
+    public static float areaBaseDodecagonal(float a) {
+        return (float) (3 * (2 + Math.sqrt(3)) * Math.pow(a, 2));
+    }
+    // calcular el volumen de la pirámide dodecagonal
+    public static float  calcularVolumen(float l, float a) {
+        float b = areaBaseDodecagonal(l);
+        return (float) ((1.0 / 3.0) * b * a);
+    }
