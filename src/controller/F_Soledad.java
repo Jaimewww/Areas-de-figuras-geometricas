@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controller;
+//package controller;
 
 /**
  *
  * @author JAIMEUNL
  */
-public class F_Soledad {
+/*public class F_Soledad {
     public void ejecutarRombo() { // 55
         float a = Math.abs(menu.readFloat("Ingrese el valor de la diagonal mayor (D): "));
         float b = Math.abs(menu.readFloat("Ingrese el valor de la diagonal mmenor (d): "));
@@ -122,4 +122,4 @@ public class F_Soledad {
         float area = (a * b);
         System.out.println("Su area es: " + area);
     }
-}
+}*/

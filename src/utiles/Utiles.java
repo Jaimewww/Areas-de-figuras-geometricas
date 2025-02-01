@@ -5,14 +5,15 @@
  */
 package utiles;
 
+import java.awt.BorderLayout;
 import java.util.Random;
+import javax.swing.JPanel;
 
 /**
  *
  * @author JAIMEUNL
  */
 public class Utiles {
-
     public static boolean validate(String num) {
         if (num != null) {
             boolean band = true;
